@@ -17,7 +17,7 @@ const getWeatherReport = (err, data, callback) => {
                 callback('unable to get weather details', undefined);
             } else {
                 const { temperature, precipProbability } = body.currently
-                callback(undefined, {data: `${body.daily.data[0].summary} It is currently ${temperature} degrees out. There is a ${precipProbability}% chance of rain`, location})
+                callback(undefined, {data: `${body.daily.data[0].summary} It is currently ${temperature} degrees out. There is a ${precipProbability}% chance of rain.<br/>High temperature of the day is: ${body.daily.data[0].temperatureHigh}.<br/>Low temperature of the day is: ${body.daily.data[0].temperatureLow}`, location})
             }
         });
     }
